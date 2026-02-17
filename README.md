@@ -75,10 +75,9 @@ No installation required! Just download and open:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/healthai.git
-
+git clone https://github.com/Mansiii-8432/MindCare-AI-Mental-Health-Dashboard.git
 # Navigate to project folder
-cd healthai
+cd MindCare-AI-Mental-Health-Dashboard
 
 # Open in browser
 # Simply open index.html in any modern browser
@@ -205,7 +204,7 @@ Glass Background: rgba(255, 255, 255, 0.08)
 ## � Project Structure
 
 ```
-healthai/
+MindCare-AI-Mental-Health-Dashboard/
 ├── index.html          # Main HTML file
 ├── styles.css          # All styling
 ├── script.js           # All JavaScript functionality
@@ -301,17 +300,11 @@ SOFTWARE.
 
 ---
 
-## 🌐 Live Demo
-
-[View Live Demo](#) *(Add your GitHub Pages or deployment link here)*
-
----
 
 ## 📧 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/healthai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/healthai/discussions)
-- **Email**: your.email@example.com
+- **Issues**: [GitHub Issues](https://github.com/Mansiii-8432/MindCare-AI-Mental-Health-Dashboard.git)
+- **Email**: mansikhairnar@gmail.com
 
 ---
 
@@ -400,15 +393,9 @@ If you find this project helpful, please consider giving it a ⭐ on GitHub!
 
 ### 📱 Screenshots
 
-*(Add screenshots of your project here)*
+![alt text](<Screenshot (416).png>)
 
-1. Hero Section with Feature Cards
-2. Mental Health AI Chatbot
-3. Symptom Checker Interface
-4. Nutrition Planner
-5. Mood Tracker
-6. Wellness Tips Section
-
+![alt text](<Screenshot (418).png>)
 ---
 
 **© 2026 HealthAI. All rights reserved.**
