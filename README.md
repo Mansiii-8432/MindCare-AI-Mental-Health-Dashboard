@@ -1,13 +1,5 @@
 # 🌟 HealthAI - Complete AI Health Platform
 
-> An award-winning comprehensive health platform featuring Mental Health AI, Symptom Checker, and Nutrition Planner with premium glassmorphism UI.
-
-![Version](https://img.shields.io/badge/version-3.0-purple)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![SDG](https://img.shields.io/badge/SDG-3%20Good%20Health-success)
-![HTML](https://img.shields.io/badge/HTML-5-orange)
-![CSS](https://img.shields.io/badge/CSS-3-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 ## � About The Project
 
