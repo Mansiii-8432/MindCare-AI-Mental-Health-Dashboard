@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mental Health Dashboard - Supporting your journey to better mental health through AI-powered conversations, mood tracking, and personalized wellness tips.">
+  <meta name="keywords" content="mental health, wellness, mood tracker, AI chatbot, SDG 3">
+  <meta name="author" content="Mental Health Dashboard">
+  <title>MindAI - Your AI Mental Wellness Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-logo">✨ MindAI</div>
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="#home" role="menuitem">Home</a></li>
+        <li role="none"><a href="#chatbot" role="menuitem">AI Support</a></li>
+        <li role="none"><a href="#symptom-checker" role="menuitem">Symptom Checker</a></li>
+        <li role="none"><a href="#mood-tracker" role="menuitem">Mood Tracker</a></li>
+        <li role="none"><a href="#nutrition" role="menuitem">Nutrition AI</a></li>
+        <li role="none"><a href="#tips" role="menuitem">Wellness Tips</a></li>
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Your Complete AI Health Companion</h1>
+        <p class="hero-description">
+          Experience the future of healthcare with AI-powered mental health support, 
+          symptom checking, nutrition planning, and personalized wellness insights - all in one platform.
+        </p>
+        
+        <!-- Feature Cards -->
+        <div class="hero-feature-cards">
+          <div class="feature-card" onclick="document.getElementById('chatbot').scrollIntoView({behavior: 'smooth'})">
+            <div class="feature-icon">💬</div>
+            <h3>Mental Health AI</h3>
+            <p>24/7 emotional support</p>
+            <div class="feature-arrow">→</div>
+          </div>
+          
+          <div class="feature-card" onclick="document.getElementById('symptom-checker').scrollIntoView({behavior: 'smooth'})">
+            <div class="feature-icon">🩺</div>
+            <h3>Symptom Checker</h3>
+            <p>Instant health guidance</p>
+            <div class="feature-arrow">→</div>
+          </div>
+          
+          <div class="feature-card" onclick="document.getElementById('nutrition').scrollIntoView({behavior: 'smooth'})">
+            <div class="feature-icon">🥗</div>
+            <h3>Nutrition AI</h3>
+            <p>Personalized meal plans</p>
+            <div class="feature-arrow">→</div>
+          </div>
+        </div>
+        
+        <button class="cta-button" onclick="document.getElementById('chatbot').scrollIntoView({behavior: 'smooth'})" aria-label="Get started with health support">
+          Start Your Journey ✨
+        </button>
+      </div>
+    </section>
+
+    <!-- AI Chatbot Section -->
+    <section id="chatbot" class="chatbot-section">
+      <h2>💬 AI Mental Health Support</h2>
+      <p class="section-description">Share your thoughts in a safe, supportive space powered by empathetic AI.</p>
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Chat conversation">
+          <!-- Messages will be dynamically added here -->
+        </div>
+        <div class="chat-input-container">
+          <label for="chatInput" class="visually-hidden">Type your message</label>
+          <input 
+            type="text" 
+            id="chatInput" 
+            placeholder="Share your thoughts..." 
+            aria-label="Chat message input"
+            autocomplete="off"
+          />
+          <button id="sendButton" aria-label="Send message">Send 💫</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Symptom Checker Section -->
+    <section id="symptom-checker" class="symptom-section">
+      <h2>🩺 AI Symptom Checker</h2>
+      <p class="section-description">Check your symptoms and get instant AI-powered health guidance</p>
+      
+      <div class="symptom-container">
+        <div class="symptom-selector">
+          <h3>Select Your Symptoms</h3>
+          <div class="symptom-grid">
+            <button class="symptom-btn" data-symptom="fever">🌡️ Fever</button>
+            <button class="symptom-btn" data-symptom="cough">😷 Cough</button>
+            <button class="symptom-btn" data-symptom="headache">🤕 Headache</button>
+            <button class="symptom-btn" data-symptom="stomach-pain">🤢 Stomach Pain</button>
+            <button class="symptom-btn" data-symptom="body-pain">💪 Body Pain</button>
+            <button class="symptom-btn" data-symptom="cold">🤧 Cold/Runny Nose</button>
+            <button class="symptom-btn" data-symptom="sore-throat">😣 Sore Throat</button>
+            <button class="symptom-btn" data-symptom="fatigue">😴 Fatigue</button>
+            <button class="symptom-btn" data-symptom="nausea">🤮 Nausea</button>
+            <button class="symptom-btn" data-symptom="dizziness">😵 Dizziness</button>
+            <button class="symptom-btn" data-symptom="chest-pain">💔 Chest Pain</button>
+            <button class="symptom-btn" data-symptom="breathing">😮‍💨 Breathing Issues</button>
+          </div>
+          
+          <div class="selected-symptoms-box">
+            <h4>Selected Symptoms:</h4>
+            <div id="selectedSymptomsList" class="selected-list"></div>
+            <button class="analyze-btn" id="analyzeBtn">Analyze Symptoms 🔬</button>
+            <button class="clear-btn" id="clearSymptomsBtn">Clear All</button>
+          </div>
+        </div>
+
+        <div class="symptom-results" id="symptomResults" style="display: none;">
+          <h3>🔍 AI Analysis Results</h3>
+          <div id="diagnosisContent"></div>
+          
+          <div class="emergency-warning" id="emergencyWarning" style="display: none;">
+            <h4>⚠️ Emergency Alert</h4>
+            <p>Your symptoms may require immediate medical attention!</p>
+            <div class="emergency-contacts">
+              <a href="tel:108" class="emergency-btn">🚑 Call Ambulance (108)</a>
+              <a href="tel:102" class="emergency-btn">🏥 Hospital (102)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mood Tracker Section -->
+    <section id="mood-tracker" class="mood-tracker-section">
+      <h2>🎭 Track Your Mood</h2>
+      <p class="section-description">Monitor your emotional well-being with our intelligent mood tracking system.</p>
+      <div class="mood-selector" role="group" aria-label="Mood selection buttons">
+        <button class="mood-btn" data-mood="great" aria-label="Log mood: Great">
+          <span class="mood-emoji" aria-hidden="true">😊</span>
+          <span class="mood-label">Great</span>
+        </button>
+        <button class="mood-btn" data-mood="good" aria-label="Log mood: Good">
+          <span class="mood-emoji" aria-hidden="true">🙂</span>
+          <span class="mood-label">Good</span>
+        </button>
+        <button class="mood-btn" data-mood="okay" aria-label="Log mood: Okay">
+          <span class="mood-emoji" aria-hidden="true">😐</span>
+          <span class="mood-label">Okay</span>
+        </button>
+        <button class="mood-btn" data-mood="sad" aria-label="Log mood: Sad">
+          <span class="mood-emoji" aria-hidden="true">😢</span>
+          <span class="mood-label">Sad</span>
+        </button>
+        <button class="mood-btn" data-mood="stressed" aria-label="Log mood: Stressed">
+          <span class="mood-emoji" aria-hidden="true">😰</span>
+          <span class="mood-label">Stressed</span>
+        </button>
+      </div>
+      <div class="mood-history" id="moodHistory" aria-label="Mood history">
+        <h3>📊 Your Mood History</h3>
+        <div id="moodHistoryList" role="list">
+          <!-- Mood logs will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutrition AI Section -->
+    <section id="nutrition" class="nutrition-section">
+      <h2>🥗 AI Nutrition Planner</h2>
+      <p class="section-description">Get personalized meal recommendations based on your health goals</p>
+      
+      <div class="nutrition-container">
+        <div class="nutrition-input">
+          <h3>Tell Us About Your Goals</h3>
+          
+          <div class="goal-selector">
+            <button class="goal-btn" data-goal="weight-loss">🏃 Weight Loss</button>
+            <button class="goal-btn" data-goal="muscle-gain">💪 Muscle Gain</button>
+            <button class="goal-btn" data-goal="healthy-living">🌱 Healthy Living</button>
+            <button class="goal-btn" data-goal="diabetes">🩸 Diabetes Management</button>
+            <button class="goal-btn" data-goal="heart-health">❤️ Heart Health</button>
+            <button class="goal-btn" data-goal="energy-boost">⚡ Energy Boost</button>
+          </div>
+
+          <div class="dietary-preferences">
+            <h4>Dietary Preferences</h4>
+            <div class="preference-grid">
+              <button class="pref-btn" data-pref="vegetarian">🥬 Vegetarian</button>
+              <button class="pref-btn" data-pref="non-veg">🍗 Non-Vegetarian</button>
+              <button class="pref-btn" data-pref="vegan">🌿 Vegan</button>
+              <button class="pref-btn" data-pref="no-restriction">🍽️ No Restriction</button>
+            </div>
+          </div>
+
+          <button class="generate-plan-btn" id="generatePlanBtn">Generate Meal Plan 🍱</button>
+        </div>
+
+        <div class="meal-plan-results" id="mealPlanResults" style="display: none;">
+          <h3>📋 Your Personalized Meal Plan</h3>
+          <div id="mealPlanContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health Tips Section -->
+    <section id="tips" class="tips-section">
+      <h2>💎 Wellness Insights</h2>
+      <p class="section-description">Evidence-based strategies powered by mental health research and AI insights.</p>
+      <div class="tips-grid">
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">🧘</div>
+          <h3>Practice Mindfulness</h3>
+          <p>Take 5-10 minutes daily for meditation or deep breathing exercises to reduce stress and increase awareness.</p>
+        </article>
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">🏃</div>
+          <h3>Stay Active</h3>
+          <p>Regular physical activity releases endorphins and improves mood. Aim for 30 minutes of movement daily.</p>
+        </article>
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">😴</div>
+          <h3>Prioritize Sleep</h3>
+          <p>Quality sleep is essential for mental health. Maintain a consistent sleep schedule and create a relaxing bedtime routine.</p>
+        </article>
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">👥</div>
+          <h3>Connect with Others</h3>
+          <p>Social connections are vital for well-being. Reach out to friends, family, or support groups regularly.</p>
+        </article>
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">🙏</div>
+          <h3>Practice Gratitude</h3>
+          <p>Write down three things you're grateful for each day to shift focus toward positive aspects of life.</p>
+        </article>
+        <article class="tip-card">
+          <div class="tip-icon" aria-hidden="true">🌱</div>
+          <h3>Set Healthy Boundaries</h3>
+          <p>Learn to say no and protect your time and energy. Boundaries are essential for maintaining mental wellness.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>🌟 About MindAI</h2>
+      <div class="about-content">
+        <article class="sdg-info">
+          <div class="sdg-icon" aria-hidden="true">🎯</div>
+          <h3>Supporting SDG 3: Good Health and Well-being</h3>
+          <p>
+            MindAI aligns with the United Nations Sustainable Development 
+            Goal 3, which aims to ensure healthy lives and promote well-being for 
+            all at all ages. Mental health is a crucial component of overall health, 
+            and accessible mental health resources powered by AI are essential for achieving this goal.
+          </p>
+        </article>
+        <article class="features-list">
+          <h3>How We Support Mental Health</h3>
+          <ul>
+            <li>
+              <strong>AI-powered emotional support:</strong> Engage in supportive conversations 
+              with our empathetic AI that provides guidance for mental health concerns.
+            </li>
+            <li>
+              <strong>Intelligent mood tracking:</strong> Monitor your emotional patterns 
+              with advanced analytics to better understand your mental health journey.
+            </li>
+            <li>
+              <strong>Evidence-based wellness tips:</strong> Access practical strategies backed 
+              by mental health research and AI-curated insights.
+            </li>
+            <li>
+              <strong>Accessible, free resources:</strong> All features are available at no cost, 
+              ensuring mental health support is accessible to everyone, everywhere.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 MindAI - Your AI Mental Wellness Companion. Supporting mental wellness for all.</p>
+    <p class="footer-disclaimer">
+      <small>This tool provides general wellness support and is not a substitute for professional mental health care. 
+      If you're experiencing a mental health crisis, please contact a mental health professional or crisis helpline immediately.</small>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
